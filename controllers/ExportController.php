@@ -54,14 +54,16 @@ class CSVExport_ExportController extends Omeka_Controller_AbstractActionControll
         if (count($result[$id][$element]) == 1) {
           // the field has 1 value, get it
           $result[$id][$element] = $result[$id][$element][0];
+          $result[$id][$element] = str_replace("\r\n", "\n", $result[$id][$element]); // windows -> unix
+          $result[$id][$element] = str_replace("\r", "\n", $result[$id][$element]);   // remaining -> unix
+          $result[$id][$element] = strip_tags($result[$id][$element], '');
         } elseif (count($result[$id][$element]) > 1) {
           // if a field has multiple values, parse them
-          $results = '';
-          foreach ($result[$id][$element] as $value) {
-            $results .= $value . '; ';
-          }
-          $result[$id][$element] = rtrim($results, "; ");
-
+          //$result[$id][$element] = json_encode($result[$id][$element]);
+          $result[$id][$element] = array_map( 'strip_tags', $result[$id][$element] );
+            $result[$id][$element] = implode("; ", $result[$id][$element]);
+            $result[$id][$element] = str_replace("\r\n", "\n", $result[$id][$element]); // windows -> unix
+            $result[$id][$element] = str_replace("\r", "\n", $result[$id][$element]);   // remaining -> unix
         } else {
           // this field is empty/null
           $result[$id][$element] = null;
@@ -69,7 +71,9 @@ class CSVExport_ExportController extends Omeka_Controller_AbstractActionControll
       }
     }
 
+if (isset($result)) {
     $this->view->assign('result', $result);
+}
     $this->view->assign('search', $search);
 
   }
