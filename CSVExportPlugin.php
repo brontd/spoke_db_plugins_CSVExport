@@ -61,10 +61,10 @@ class CSVExportPlugin extends Omeka_Plugin_AbstractPlugin
   public function filterAdminNavigationMain($nav)
   {
 
-    $nav[] = array(
-      'label' => __('CSV Export'),
-      'uri' => url('/csv-export/index')
-    );
+  //  $nav[] = array(
+  //    'label' => __('CSV Export'),
+  //    'uri' => url('/csv-export/index')
+  //  );
     return $nav;
   }
 
@@ -81,9 +81,9 @@ class CSVExportPlugin extends Omeka_Plugin_AbstractPlugin
       } catch (Zend_Exception $e) {
         $params['hits'] = 0;
       }
-      echo "<a  class='button blue' style='margin-top:20px;' href='" . url('csv-export/export/csv', $params) . "'><input style='background-color:transparent;color:white;border:none;' type='button' value='Export results as CSV' /></a>";
+      echo "<a  class='add button small blue' href='" . url('csv-export/export/csv', $params) . "'><input style='background-color:transparent;border:none;padding:0px;' type='button' value='Export Results as CSV' /></a>";
     } else {
-      echo "<a class='button blue' style='margin-top:20px;' href='" . url('csv-export/export/csv') . "'><input style='background-color:transparent;color:white;border:none;' type='button' value='Export all data as CSV' /></a>";
+    //  echo "<a class='button blue' href='" . url('csv-export/export/csv') . "'><input style='background-color:transparent;color:white;border:none;padding:0px;' type='button' value='Export all data as CSV' /></a>";
     }
   }
 
