@@ -1,15 +1,12 @@
 <?php
+
 $title = option('site_title');
 $title = urlencode($title);
 date_default_timezone_set('America/Los_Angeles');
 
-if ($search)
-{
-	
+if ($search) {
 	$fileName = $title.'Export'.date("Y-m-d").'T'.date("H:i:s").'.csv';
-}
-else
-{
+} else {
 	$fileName = $title.'FullExport'.date("Y-m-d").'T'.date("H:i:s").'.csv';
 }
 
@@ -21,19 +18,16 @@ header("Expires: 0");
 header("Pragma: public");
  
 $file = fopen( 'php://output', 'w' );
-
- 
 $header = false;
- 
-foreach ( $result as $data ) 
-{
-    if ( !$header ) 
-    {
-        fputcsv($file, array_keys($data), ',', '"');
-        $header = true;
+
+if (!empty($result)) { 
+    foreach ( $result as $data) {
+        if (!$header) {
+            fputcsv($file, array_keys($data), ',', '"');
+            $header = true;
+        }
+        fputcsv($file, $data, ',', '"');
     }
- 
-    fputcsv($file, $data, ',', '"');
 }
 
 fclose($file);
