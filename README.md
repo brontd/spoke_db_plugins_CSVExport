@@ -10,6 +10,8 @@ https://github.com/brontd/spoke_db_plugins_CSVExport/blob/
 
 ## UK Customizations
 
+To be clear, these customizations have been loaded into this forked repo. Should only have to publish and download
+
 [https://github.com/brontd/spoke_db_plugins_CSVExport/blob/master/config-form.php](https://github.com/brontd/spoke_db_plugins_CSVExport/blob/master/config-form.php)
 [https://github.com/brontd/spoke_db_plugins_CSVExport/blob/master/controllers/ExportController.php](https://github.com/brontd/spoke_db_plugins_CSVExport/blob/master/controllers/ExportController.php)
 [https://github.com/brontd/spoke_db_plugins_CSVExport/blob/master/CSVExportPlugin.php](https://github.com/brontd/spoke_db_plugins_CSVExport/blob/master/CSVExportPlugin.php)
