@@ -1,6 +1,6 @@
-<?php
+ <?php
 
-class CSVExport_ExportController extends Omeka_Controller_AbstractActionController
+class CSVExport_ExportController extends Omeka_Controller_AbstractActionController 
 {
 
   public function csvAction()
