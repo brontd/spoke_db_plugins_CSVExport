@@ -1,3 +1,18 @@
+# CSV Export
+
+## Info
+
+This repo from has been forked from https://github.com/adehner/CSVExport and modified. Customizations outlined below have been added to the code.
+
+## Source
+https://github.com/brontd/spoke_db_plugins_CSVExport/blob/
+
+Customization
+
+[https://github.com/brontd/spoke_db_plugins_CSVExport/blob/master/controllers/ExportController.php](https://github.com/brontd/spoke_db_plugins_CSVExport/blob/master/controllers/ExportController.php)
+
+--- 
+
 ## About
 Allows Omeka users to export item metadata to a CSV (comma separated values) file, mapping elements to CSV column data. Each row in the file represents metadata for a single item. This plugin is useful for exporting data from an Omeka site and editing that data in a spreadsheet or OpenRefine. By using Daniel Berthereau's <a href="https://github.com/Daniel-KM/CsvImportPlus">CSV Import+ plugin</a>, the metadata can be imported back into Omeka, overlaying existing Omeka item metadata. When an Omeka record is edited with these batch processes, the existing reference URL and record ID for an item remain unchanged.
 
